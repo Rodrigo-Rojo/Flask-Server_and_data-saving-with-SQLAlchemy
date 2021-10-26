@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% from 'bootstrap/form.html' import render_form %}
+{% block styles %}
+{{ super() }}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+{% block title %}Edit Rating{% endblock %}
+{% block content %}
+<h1>Book Name: {{ book.title }}</h1>
+<h3>Current Rating: {{ book.rating }}</h3>
+{{ render_form(form) }}
+<br>
+<a class="btn btn-secondary btn-md" href="{{ url_for('home') }}">Go Home</a>
+{% endblock %}
